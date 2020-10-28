@@ -1,0 +1,46 @@
+{{#partial "title"}}WildlifeTracker{{/partial}}
+{{#partial "content"}}
+
+
+    {{#if rangers}}
+
+        <h3>Sightings</h3>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+
+                <th scope="col">Badge</th>
+
+                <th scope="col">Details</th>
+
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {{#each rangers}}
+                <tr>
+                    <td>{{name}}</td>
+
+                    <td>{{badgeNo}}</td>
+
+
+                    <td><a href="/locations/{{id}}" class="btn btn-secondary">Details</a></td>
+
+
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
+
+
+
+
+
+
+
+{{/partial}}
+{{> format.hbs}}
