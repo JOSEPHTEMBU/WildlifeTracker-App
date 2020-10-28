@@ -1,0 +1,16 @@
+{{#partial "content"}}
+    <div class="container">
+        <h5 class="text-center">Add Location</h5>
+        <hr>
+        <form method="Post" action="/addlocation">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Location Name">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{{/partial}}
+
+{{> base.hbs}}
