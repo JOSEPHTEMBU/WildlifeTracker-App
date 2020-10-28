@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-//    id 'applicatio'
+    id 'application'
 }
 
 group 'org.example'
@@ -8,7 +8,7 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-//    mainClassName = 'App'
+    mainClassName = 'App'
 //    applicationName='wildlifeTracker-App'
 
 }
