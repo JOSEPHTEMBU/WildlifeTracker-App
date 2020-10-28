@@ -1,2 +1,4 @@
-package DAO;public interface SightingDao {
+package DAO;
+
+public interface SightingDao {
 }

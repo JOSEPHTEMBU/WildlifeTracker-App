@@ -1,2 +1,4 @@
-package DAO;public interface LocationDAO {
+package DAO;
+
+public interface LocationDAO {
 }

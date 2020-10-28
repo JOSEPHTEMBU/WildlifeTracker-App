@@ -1,2 +1,4 @@
-package DAO;public interface RangerDao {
+package DAO;
+
+public interface RangerDao {
 }
