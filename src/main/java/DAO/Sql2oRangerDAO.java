@@ -1,6 +1,8 @@
 package DAO;
 
 import models.Ranger;
+import models.Sighting;
+import models.SightingEndangered;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
@@ -39,6 +41,45 @@ public class Sql2oRangerDAO implements RangerDAO{
         }catch(Sql2oException ex){
             System.out.println(ex);
 
+        }
+    }
+
+    @Override
+    public Ranger getRangerById(int id) {
+        String sql = "SELECT * FROM rangers WHERE id = :id";
+        try(Connection conn = sql2o.open()) {
+            return conn.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Ranger.class);
+        }catch(Sql2oException ex){
+            System.out.println(ex);
+            return null;
+        }
+    }
+
+    @Override
+    public List<Sighting> getSightingsByRangerId(int id) {
+        String sql = "SELECT * FROM sightings WHERE type ='Non-Endangered' AND rangerId = :id";
+        try(Connection con = sql2o.open()){
+            return con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetch(Sighting.class);
+        }catch(Sql2oException ex){
+            System.out.println(ex);
+            return null;
+        }
+    }
+
+    @Override
+    public List<SightingEndangered> getEndangeredSightingsByRangerId(int id) {
+        String sql = "SELECT * FROM sightings WHERE type ='Endangered' AND rangerId = :id";
+        try(Connection con = sql2o.open()){
+            return con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetch(SightingEndangered.class);
+        }catch(Sql2oException ex){
+            System.out.println(ex);
+            return null;
         }
     }
 }

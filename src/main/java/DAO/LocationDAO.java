@@ -10,4 +10,3 @@ public interface LocationDAO {
 
     void addLocation(Location location);
 }
-

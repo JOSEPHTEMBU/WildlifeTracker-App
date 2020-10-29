@@ -1,4 +1,4 @@
-{{#partial "title"}}WildlifeTracker{{/partial}}
+{{#partial "title"}}WILDLIFETRACKER-APP{{/partial}}
 {{#partial "content"}}
 
 
@@ -13,10 +13,6 @@
                 <th scope="col">Badge</th>
 
                 <th scope="col">Details</th>
-
-
-
-
             </tr>
             </thead>
             <tbody>
@@ -27,7 +23,7 @@
                     <td>{{badgeNo}}</td>
 
 
-                    <td><a href="/locations/{{id}}" class="btn btn-secondary">Details</a></td>
+                    <td><a href="/rangers/{{id}}" class="btn btn-secondary">Details</a></td>
 
 
                 </tr>
@@ -35,12 +31,5 @@
             </tbody>
         </table>
     {{/if}}
-
-
-
-
-
-
-
 {{/partial}}
 {{> format.hbs}}

@@ -4,11 +4,13 @@ CREATE DATABASE wildlife;
 
 CREATE TABLE sightings(
     id SERIAL PRIMARY KEY,
-    name VARCHAR,
-    age INTEGER,
-    health VARCHAR,
+    animalName VARCHAR,
+    animalAge INTEGER,
+    animalHealth VARCHAR,
     rangerId INTEGER,
-    locationId INTEGER
+    type VARCHAR,
+    locationId INTEGER,
+    dateSighted TIMESTAMP
 );
 
 CREATE TABLE rangers(

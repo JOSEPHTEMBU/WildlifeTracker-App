@@ -1,5 +1,11 @@
-{{#partial "title"}}WILDLIFETRACKER{{/partial}}
+{{#partial "title"}}Heroes{{/partial}}
 {{#partial "content"}}
+
+    <h2>Name: {{ranger.name}}</h2>
+
+    <h2>Badge Number: {{ranger.badge}}</h2>
+
+    <h2>Contacts: {{ranger.contact}}</h2>
 
 
     {{#if endangeredSightings}}
@@ -21,6 +27,7 @@
                 <th scope="col">Ranger</th>
 
                 <th scope="col">Date</th>
+
 
             </tr>
             </thead>
@@ -62,7 +69,7 @@
 
                 <th scope="col">Ranger</th>
 
-                <th scope="col">Date Sighted</th>
+                <th scope="col">Date</th>
 
 
             </tr>
@@ -80,6 +87,7 @@
                     <td>{{rangerId}}</td>
 
                     <td>{{dateSighted}}</td>
+
 
                 </tr>
             {{/each}}
