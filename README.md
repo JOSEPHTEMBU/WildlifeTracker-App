@@ -6,7 +6,7 @@ A web application for recording and keeping track of endangered and non-endanger
 Joseph Mulama Tembu
 
 # Figma Link
-
+https://www.figma.com/proto/z5EKUNSNHqEkI3KHgkYIYF/WILDLIFETRACKER-APP?node-id=1%3A2&scaling=min-zoom
 # Live link
 
 # Prerequisites
