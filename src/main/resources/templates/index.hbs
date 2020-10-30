@@ -1,4 +1,4 @@
-{{#partial "title"}}WILDLIFETRACKER{{/partial}}
+{{#partial "title"}}WILDLIFETRACKER-APP{{/partial}}
 {{#partial "content"}}
 
 
@@ -25,6 +25,7 @@
             </tr>
             </thead>
             <tbody>
+
             {{#each endangeredSightings}}
                 <tr>
                     <td>{{type}}</td>
@@ -46,6 +47,7 @@
             {{/each}}
             </tbody>
         </table>
+        <a href="/deleteallendangeredSightings" class="btn btn-danger">Delete All endangeredSightings</a>
     {{/if}}
 
     {{#if normalSightings}}
@@ -85,6 +87,7 @@
             {{/each}}
             </tbody>
         </table>
+        <a href="/deleteall NonEndangeredSightings" class="btn btn-danger">Delete All  NonEndangerelSightings</a>
     {{/if}}
 
 

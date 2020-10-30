@@ -1,13 +1,15 @@
-{{#partial "title"}}wildlifetracker{{/partial}}
+{{#partial "title"}}WILDLIFETRACKER-APP{{/partial}}
 {{#partial "content"}}
 
 
-    {{#if sightings}}
+    {{#if endangeredSightings}}
 
-        <h3>Sightings</h3>
+        <h3>Endangered Sightings</h3>
         <table class="table table-dark">
             <thead>
             <tr>
+                <th scope="col">Type</th>
+
                 <th scope="col">Name</th>
 
                 <th scope="col">Age</th>
@@ -18,26 +20,76 @@
 
                 <th scope="col">Ranger</th>
 
+                <th scope="col">Date</th>
+
             </tr>
             </thead>
             <tbody>
-            {{#each sightings}}
+
+            {{#each endangeredSightings}}
                 <tr>
-                    <td>{{name}}</td>
+                    <td>{{type}}</td>
 
-                    <td>{{name}}</td>
+                    <td>{{animalName}}</td>
 
+                    <td>{{animalAge}}</td>
 
-                    <td>{{name}}</td>
+                    <td>{{animalHealth}}</td>
 
-                    <td>{{name}}</td>
+                    <td>{{locationId}}</td>
+
+                    <td>{{rangerId}}</td>
+
+                    <td>{{dateSighted}}</td>
 
 
                 </tr>
             {{/each}}
             </tbody>
         </table>
+        <a href="/deleteallendangeredSightings" class="btn btn-danger">Delete All endangeredSightings</a>
     {{/if}}
+
+    {{#if normalSightings}}
+
+        <h3>Non-Endangered Sightings</h3>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Type</th>
+
+                <th scope="col">Name</th>
+
+                <th scope="col">Location</th>
+
+                <th scope="col">Ranger</th>
+
+                <th scope="col">Date Sighted</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {{#each normalSightings}}
+
+                <tr>
+                    <td>{{type}}</td>
+
+                    <td>{{animalName}}</td>
+
+                    <td>{{locationId}}</td>
+
+                    <td>{{rangerId}}</td>
+
+                    <td>{{dateSighted}}</td>
+
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        <a href="/deleteall NonEndangeredSightings" class="btn btn-danger">Delete All  NonEndangerelSightings</a>
+    {{/if}}
+
 
 
 
