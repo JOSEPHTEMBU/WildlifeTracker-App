@@ -17,8 +17,16 @@ import java.util.Map;
 
 
 public class App {
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
 
     public static void main(String[] args) {
+
         staticFileLocation("/public");
         String connectionString = "jdbc:postgresql://localhost:5432/wildlife";
         Sql2o sql2o = new Sql2o(connectionString,"moringa","Access");
@@ -28,6 +36,18 @@ public class App {
         Sql2oSightingDAO sightingDAO = new Sql2oSightingDAO(sql2o);
 
         Map<String, Object> model = new HashMap<>();
+
+//        ---h2 db---
+//        String connectionString = "jdbc:h2:~/HeroesSquad-App.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+//        Sql2o sql2o = new Sql2o(connectionString, "", "");
+
+//        ---Local Database---
+//        String connectionString = "jdbc:postgresql://localhost:5432/heroapp"; // local db connection string
+//        Sql2o sql2o = new Sql2o(connectionString, "moringa", "Access"); // local db sql2o instance
+
+//        ---heroku Database---
+//        String connectionString = "jdbc:postgresql://ec2-23-22-156-110.compute-1.amazonaws.com/dca403p0rj7rd1"; // heroku db connection string
+//        Sql2o sql2o = new Sql2o(connectionString, "pawsdbhpnhsqno", "c3d09ad0e163678f9c64ceddef7f58e08083fdb434c10925ae9b9bcef355ff3d"); // heroku db sql2o instance
 
 
 
