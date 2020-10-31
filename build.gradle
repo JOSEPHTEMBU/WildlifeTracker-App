@@ -9,7 +9,7 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
     mainClassName = 'App'
-//    applicationName='wildlifeTracker-App'
+    applicationName='wt-app16'
 
 }
 

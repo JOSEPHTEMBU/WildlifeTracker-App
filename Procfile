@@ -1,0 +1,1 @@
+web: ./build/install/wt-app16/bin/wp-app16
