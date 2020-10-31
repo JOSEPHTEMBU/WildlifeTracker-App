@@ -28,29 +28,23 @@ public class App {
     public static void main(String[] args) {
 
         staticFileLocation("/public");
-        String connectionString = "jdbc:postgresql://localhost:5432/wildlife";
-        Sql2o sql2o = new Sql2o(connectionString,"moringa","Access");
+
+
+//        ---Local Database---
+//        String connectionString = "jdbc:postgresql://localhost:5432/wildlife";
+//        Sql2o sql2o = new Sql2o(connectionString,"moringa","Access");
+
+//        ---heroku Database---
+        String connectionString = "jdbc:postgresql://ec2-3-215-207-12.compute-1.amazonaws.com/d5g55ik27nqpq9"; // heroku db connection string
+        Sql2o sql2o = new Sql2o(connectionString, "mqqnohfjxmhjlz", "821577bd90197e76ac9a9266af4314a1130af55634e8890097b282ee04841153"); // heroku db sql2o instance
+
+
         Sql2oLocationDAO locationDAO = new Sql2oLocationDAO(sql2o);
         Sql2oRangerDAO rangerDAO = new Sql2oRangerDAO(sql2o);
         Sql2oSightingEndangeredDAO sightingEndangeredDAO = new Sql2oSightingEndangeredDAO(sql2o);
         Sql2oSightingDAO sightingDAO = new Sql2oSightingDAO(sql2o);
 
         Map<String, Object> model = new HashMap<>();
-
-//        ---h2 db---
-//        String connectionString = "jdbc:h2:~/HeroesSquad-App.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-//        Sql2o sql2o = new Sql2o(connectionString, "", "");
-
-//        ---Local Database---
-//        String connectionString = "jdbc:postgresql://localhost:5432/heroapp"; // local db connection string
-//        Sql2o sql2o = new Sql2o(connectionString, "moringa", "Access"); // local db sql2o instance
-
-//        ---heroku Database---
-//        String connectionString = "jdbc:postgresql://ec2-23-22-156-110.compute-1.amazonaws.com/dca403p0rj7rd1"; // heroku db connection string
-//        Sql2o sql2o = new Sql2o(connectionString, "pawsdbhpnhsqno", "c3d09ad0e163678f9c64ceddef7f58e08083fdb434c10925ae9b9bcef355ff3d"); // heroku db sql2o instance
-
-
-
 
         get("/",(req, res)->{
             model.put("endangeredSightings", sightingEndangeredDAO.getAllEndangered());
