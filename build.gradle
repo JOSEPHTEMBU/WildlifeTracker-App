@@ -5,12 +5,12 @@ plugins {
 
 group 'org.example'
 version '1.0-SNAPSHOT'
+mainClassName = 'App'
+applicationName='wt-app16'
+
 
 repositories {
     mavenCentral()
-    mainClassName = 'App'
-    applicationName='wt-app16'
-
 }
 
 dependencies {
