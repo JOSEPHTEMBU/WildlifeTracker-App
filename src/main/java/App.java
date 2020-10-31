@@ -37,7 +37,7 @@ public class App {
 //        Sql2o sql2o = new Sql2o(connectionString,"moringa","Access");
 
 //        ---heroku Database---
-        String connectionString = "jdbc:postgresql://ec2-3-215-207-12.compute-1.amazonaws.com/d5g55ik27nqpq9"; // heroku db connection string
+      String connectionString = "jdbc:postgresql://ec2-3-215-207-12.compute-1.amazonaws.com/d5g55ik27nqpq9"; // heroku db connection string
         Sql2o sql2o = new Sql2o(connectionString, "mqqnohfjxmhjlz", "821577bd90197e76ac9a9266af4314a1130af55634e8890097b282ee04841153"); // heroku db sql2o instance
 
 
